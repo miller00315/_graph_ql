@@ -7,5 +7,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="contact.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="header">
+      <h1>Fale comigo</h1>
+    </div>
+    <div id="content">
+      <form name="contact" netlify>
+        <p>
+          <label
+            >Nome <input type="text" name="name" class="singleLine"
+          /></label>
+        </p>
+        <p>
+          <label
+            >Email <input type="email" name="email" class="singleLine"
+          /></label>
+        </p>
+        <p>
+          <label
+            >Mensagem
+            <textarea rows="5" cols="40" name="message">
+Insira sua mensagem aqui...
+           </textarea
+            >
+          </label>
+        </p>
+        <p>
+          <button type="submit">Enviar mensagem</button>
+        </p>
+      </form>
+    </div>
+  </body>
 </html>

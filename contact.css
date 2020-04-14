@@ -4,3 +4,50 @@ body {
   padding-left: 17px;
   padding-right: 17px;
 }
+
+.header {
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+#content input {
+  width: 50%;
+  border-radius: 5px;
+  border-width: 0px;
+  height: 30px;
+  margin-left: 20px;
+  margin-top: 20px;
+  padding: 5px;
+}
+
+#content label {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+}
+
+#content textarea {
+  width: 50%;
+  border-radius: 5px;
+  border-width: 0px;
+  margin-left: 20px;
+  margin-top: 20px;
+  padding: 5px;
+}
+
+#content button {
+  border-radius: 5px;
+  border-width: 0px;
+  margin-left: 20px;
+  margin-top: 20px;
+  padding: 10px;
+}
