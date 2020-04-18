@@ -1,5 +1,4 @@
 body {
-  background-color: #054f77;
   padding-top: 10px;
   padding-left: 17px;
   padding-right: 17px;
@@ -11,6 +10,8 @@ body {
   margin-bottom: 10px;
   justify-content: space-between;
   align-items: center;
+  background-color: #054f77;
+  border-radius: 5px;
 }
 
 .header a {
@@ -25,13 +26,29 @@ body {
   padding: 10px;
   margin-bottom: 10px;
   margin-top: 10px;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.subHeader img {
+  height: 120px;
+  width: 120px;
+  margin-right: 50px;
+  border-radius: 50%;
 }
 
 #content {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
-  padding: 10px;
+  background-color: #054f77;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+#content a {
+  color: white;
+  text-decoration: none;
 }
 
 #content p {
@@ -47,7 +64,8 @@ h1 {
 
 h2 {
   font-family: Arial, Helvetica, sans-serif;
-  color: white;
+  color: black;
+  margin-left: 5px;
 }
 
 #links {
@@ -55,6 +73,7 @@ h2 {
   flex-direction: row;
   justify-content: space-around;
   padding: 10px;
+  margin-top: 20px;
 }
 
 #links a {
@@ -62,4 +81,19 @@ h2 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: medium;
   text-decoration: none;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  background-color: teal;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 5px;
+}
+
+#links a img {
+  height: 40px;
+}
+
+#links a h2 {
+  color: white;
 }
