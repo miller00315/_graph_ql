@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/miller00315/covid19news.git"
+    "url": "git+https://github.com/miller00315/_graph_ql.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/miller00315/covid19news/issues"
+    "url": "https://github.com/miller00315/_graph_ql/issues"
   },
-  "homepage": "https://github.com/miller00315/covid19news#readme"
+  "homepage": "https://github.com/miller00315/_graph_ql#readme"
 }
