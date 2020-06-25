@@ -1,7 +1,7 @@
 import { gql } from 'apollo-server-express';
+import * as uuid from 'uuid';
 import createRepository from '../../io/database/createRepository';
 import { ListSortEnum } from '../List/List';
-import { json } from 'express';
 
 const clientsRepository = createRepository('clients');
 
@@ -31,18 +31,27 @@ export const typeDefs = gql`
     sort: ListSort
   }
 
+  input CreateClientInput {
+    name: String!
+    email: String!
+  }
+
   extend type Query {
     client(id: ID!): Client
     clients(options: ClientListOptions): ClientList
+  }
+
+  extend type Mutation {
+    createClient(input: CreateClientInput!): Client!
   }
 `;
 
 export const resolvers = {
   Query: {
-    client: async (_, { id }) => {
+    client: async (_, args) => {
       const clients = await clientsRepository.read();
 
-      return clients.find((client) => client.id == id);
+      return clients.find((client) => client.id == args.id);
     },
 
     clients: async (_, args) => {
@@ -100,7 +109,7 @@ export const resolvers = {
             return client[field].toString() === value;
           }
 
-          return client[field] == value;
+          return client[field] === value;
         });
       });
 
@@ -108,6 +117,25 @@ export const resolvers = {
         items: filteredClients.slice(skip, skip + take),
         totalItems: filteredClients.length,
       };
+    },
+  },
+
+  Mutation: {
+    createClient: async (_, args) => {
+      const { input } = args;
+
+      const clients = await clientsRepository.read();
+
+      const client = {
+        id: uuid.v4(),
+        name: input.name,
+        email: input.email,
+        disabled: false,
+      };
+
+      await clientsRepository.write([...clients, client]);
+
+      return client;
     },
   },
 };

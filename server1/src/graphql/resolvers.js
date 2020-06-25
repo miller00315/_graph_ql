@@ -13,6 +13,10 @@ const resolvers = {
     ...clientResolver.Query,
     ...demandResolver.Query,
   },
+
+  Mutation: {
+    ...clientResolver.Mutation,
+  },
 };
 
 export default resolvers;

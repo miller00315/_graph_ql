@@ -14,10 +14,16 @@
   "dependencies": {
     "apollo-server-express": "^2.15.0",
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "uuid": "^8.2.0"
   },
   "devDependencies": {
     "esm": "^3.2.25",
     "nodemon": "^2.0.4"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "src/data/*"
+    ]
   }
 }
