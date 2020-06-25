@@ -15,6 +15,8 @@ export const typeDefs = gql`
 
 export const resolvers = {
   Query: {
-    demands: async () => {},
+    demands: async () => {
+      return [];
+    },
   },
 };

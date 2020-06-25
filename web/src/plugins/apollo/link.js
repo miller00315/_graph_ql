@@ -6,14 +6,16 @@ import { onError } from 'apollo-link-error';
 const loggerLink = new ApolloLink(
   (operation, forward) =>
     new Observable((observer) => {
-      forward(operation).subscribe({
+      const subscription = forward(operation).subscribe({
         next: (result) => {
           console.log('Log', result);
           observer.next(result);
         },
-        error: observer.complete.bind(observer),
+        error: observer.error.bind(observer),
         complete: observer.complete.bind(observer),
       });
+
+      return () => subscription.unsubscribe();
     })
 );
 
@@ -28,7 +30,7 @@ const link = ApolloLink.from([
     };
   }),
   createHttpLink({
-    uri: 'http://127.0.0.1:8000/graphql',
+    uri: 'http://localhost:8000/graphql',
   }),
 ]);
 
