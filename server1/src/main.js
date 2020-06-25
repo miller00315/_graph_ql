@@ -19,5 +19,5 @@ const PORT = process.env.PORT ? parseInt(process.env.PORT) : 8000;
 const HOST_NAME = process.env.HOST_NAME || '127.0.0.1';
 
 app.listen(PORT, HOST_NAME, () => {
-  console.log(`Ouvindo ${HOST_NAME}:${PORT}`);
+  console.log(`Listening http://${HOST_NAME}:${PORT}`);
 });
